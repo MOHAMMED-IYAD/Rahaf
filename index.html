@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f7">
+  <meta name="description" content="A little birthday page for Rahaf.">
+  <meta name="theme-color" content="#FCEDEA">
+  <title>Rahaf ✿</title>
+
+  <!-- Website Icon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Language Selection -->
+  <div class="language-screen" id="languageScreen">
+    <div class="language-card">
+      <span class="eyebrow">A LITTLE BIRTHDAY PAGE</span>
+      <h1>Welcome</h1>
+      <p>Choose your language</p>
+
+      <div class="language-actions">
+        <button class="language-choice" data-lang="ar">العربية</button>
+        <button class="language-choice" data-lang="en">English</button>
+      </div>
+
+      <span class="tiny-flower">✿</span>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <section class="login-screen" id="loginScreen" hidden>
+    <div class="login-card">
+      <span class="login-flower">✿</span>
+
+      <p class="login-subtitle" data-i18n="loginIntro">
+        أهلًا فيكِ، اختاري طريقة الدخول.
+      </p>
+
+      <form id="loginForm" class="login-form">
+        <label for="username" data-i18n="usernameLabel">اسم المستخدم</label>
+        <input id="username" value="rahaf" autocomplete="username" required>
+
+        <label for="password" data-i18n="passwordLabel">كلمة المرور</label>
+        <input id="password" type="password" inputmode="numeric" autocomplete="current-password" required>
+
+        <button class="button button-dark" type="submit" id="loginButton" data-i18n="loginButton">
+          دخول
+        </button>
+
+        <p class="form-message" id="loginMessage" role="status"></p>
+      </form>
+
+      <div class="login-divider">
+        <span data-i18n="orText">أو</span>
+      </div>
+
+      <button class="button button-outline guest-button" id="guestButton" type="button" data-i18n="guestButton">
+        الدخول كضيف
+      </button>
+
+      <p class="guest-hint" data-i18n="guestHint">
+        الضيف يشاهد التهنئة والسماء فقط.
+      </p>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader" hidden>
+    <a class="wordmark" href="#home">R<span>✿</span></a>
+
+    <nav class="desktop-nav">
+      <a href="#message" data-i18n="navMessage">التهنئة</a>
+      <a href="#sky" data-i18n="navSky">السماء</a>
+      <a href="#memories" id="memoryNav" hidden data-i18n="navMemories">الذكريات</a>
+      <a href="#letter" data-i18n="navLetter">رسالة صغيرة</a>
+    </nav>
+
+    <div class="header-actions">
+      <span class="access-label" id="accessLabel"></span>
+      <button class="language-toggle" id="languageToggle" type="button">English</button>
+      <button class="logout-button" id="logoutButton" type="button" data-i18n="logout">خروج</button>
+    </div>
+  </header>
+
+  <main id="mainContent" hidden>
+
+    <!-- Hero -->
+    <section class="hero section" id="home">
+      <div class="hero-flower flower-one">✿</div>
+      <div class="hero-flower flower-two">❀</div>
+
+      <div class="hero-content reveal">
+        <span class="eyebrow" data-i18n="heroEyebrow">يوم يستحق الاحتفال</span>
+
+        <h1 data-i18n="heroTitle">
+          كل عام وأنتِ بخير،
+          <br>
+          <em>رهف!</em>
+        </h1>
+
+        <p class="hero-date">07 <span>·</span> 11 <span>·</span> 2010</p>
+
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          صفحة صغيرة ليوم جميل.
+        </p>
+
+        <a class="text-link" href="#message">
+          <span data-i18n="begin">خلينا نبدأ</span> ↓
+        </a>
+      </div>
+
+      <div class="scroll-note" data-i18n="scroll">
+        انزلي لاكتشاف الموقع
+      </div>
+    </section>
+
+    <!-- Birthday Message -->
+    <section class="message-section section" id="message">
+      <div class="section-inner narrow reveal">
+
+        <span class="eyebrow" data-i18n="messageEyebrow">
+          كلمات صغيرة لهذا اليوم
+        </span>
+
+        <h2 data-i18n="messageTitle">
+          يوم جميل يليق بكِ.
+        </h2>
+
+        <div class="small-divider">✿</div>
+
+        <p class="main-message" data-i18n="mainMessage">
+          كل عام وأنتِ بخير يا رهف.
+          <br><br>
+          بتمنالك سنة جديدة مليانة لحظات حلوة، وأيام تشبه الأشياء اللي بتحبيها، ونجاحات تفرحي فيها من قلبك.
+          <br><br>
+          إن شاء الله تكون سنة مختلفة بكل تفاصيلها، وتحمل معها فرص حلوة وذكريات تضل حاضرة ببالك.
+          <br><br>
+          وخلي دايمًا عندك مساحة للأحلام الكبيرة، لأنها بتستاهل تنعاش.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Astronomical Sky -->
+    <section class="sky-section section" id="sky">
+      <div class="section-inner sky-inner reveal">
+
+        <span class="eyebrow" data-i18n="skyEyebrow">
+          لحظة في هذا الكون
+        </span>
+
+        <h2 data-i18n="skyTitle">
+          السماء في يوم ميلادك
+        </h2>
+
+        <p class="sky-intro" data-i18n="skyIntro">
+          نظرة إلى السماء كما بدت في ليلة ميلادك.
+        </p>
+
+        <div class="sky-date">
+          <span>Sunday, November 7, 2010</span>
+          <span>9:00 PM</span>
+        </div>
+
+        <div class="sky-card">
+
+          <div class="sky-map-wrap">
+            <div id="starmap3"></div>
+          </div>
+
+          <div class="sky-caption">
+            <p class="sky-quote" data-i18n="skyQuote"></p>
+          </div>
+
+        </div>
+
+        <div class="sky-actions">
+
+          <a class="button button-dark" href="https://slowe.github.io/VirtualSky/" target="_blank"
+            rel="noopener noreferrer" data-i18n="skySource">
+            زيارة المرصد الفلكي ↗
+          </a>
+
+          <a class="button button-outline"
+            href="https://science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday/"
+            target="_blank" rel="noopener noreferrer" data-i18n="nasaButton">
+            اكتشفي صورة هابل ↗
+          </a>
+
+        </div>
+
+        <p class="nasa-note" data-i18n="nasaNote">
+          صورة من تلسكوب هابل مرتبطة بتاريخ ميلادك، وليست صورة للسماء فوق غزة.
+        </p>
+
+        <p id="skyMapFallback" class="sky-map-fallback" hidden>
+          <a href="https://slowe.github.io/VirtualSky/" target="_blank" rel="noopener noreferrer"
+            data-i18n="skyFallback">
+            افتحي المرصد الفلكي في نافذة جديدة
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Astronomy Details -->
+    <section class="astro-section section" id="astronomy">
+      <div class="section-inner reveal">
+
+        <span class="eyebrow" data-i18n="astroEyebrow">
+          تفاصيل من تلك الليلة
+        </span>
+
+        <h2 data-i18n="astroTitle">
+          ليلة لها حكايتها
+        </h2>
+
+        <p class="astro-intro" data-i18n="astroIntro">
+          لكل ليلة تفاصيلها الصغيرة، وهذه بعض التفاصيل من سماء يوم ميلادك.
+        </p>
+
+        <div class="astro-grid">
+
+          <article class="astro-card">
+            <span>☾</span>
+            <h3 data-i18n="moonTitle">القمر</h3>
+            <p data-i18n="moonText">
+              كان القمر هلالًا رفيعًا، لا يظهر منه إلا جزء صغير مضاء.
+            </p>
+          </article>
+
+          <article class="astro-card">
+            <span>✧</span>
+            <h3 data-i18n="constellationTitle">النجوم</h3>
+            <p data-i18n="constellationText">
+              كانت النجوم والكوكبات ترسم مشهدها الخاص في السماء.
+            </p>
+          </article>
+
+          <article class="astro-card">
+            <span>✦</span>
+            <h3 data-i18n="nightTitle">هدوء الليل</h3>
+            <p data-i18n="nightText">
+              وربما مرّت نسمة لطيفة جعلت تلك الليلة أكثر جمالًا.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Private Memories -->
+    <section class="memories-section section" id="memories" hidden>
+      <div class="section-inner reveal">
+
+        <span class="eyebrow" data-i18n="memoriesEyebrow">
+          مساحة خاصة
+        </span>
+
+        <h2 data-i18n="memoriesTitle">
+          لحظات جميلة
+        </h2>
+
+        <p class="memories-intro" data-i18n="memoriesIntro">
+          مساحة تحتفظي فيها باللحظات التي تحبين العودة إليها.
+        </p>
+
+        <div class="memory-toolbar">
+          <span id="memoryCount">0 memories</span>
+
+          <button class="button button-dark" id="addMemoryButton" type="button">
+            <span>＋</span>
+            <span data-i18n="addMemory">إضافة ذكرى</span>
+          </button>
+        </div>
+
+        <div class="memory-grid" id="memoryGrid"></div>
+        <p class="memory-status" id="memoryStatus" role="status"></p>
+
+      </div>
+    </section>
+
+    <!-- Letter -->
+    <section class="letter-section section" id="letter">
+      <div class="section-inner narrow reveal">
+
+        <span class="eyebrow" data-i18n="letterEyebrow">
+          مفاجأة صغيرة
+        </span>
+
+        <h2 data-i18n="letterTitle">
+          وفي شغلة كمان...
+        </h2>
+
+        <p class="letter-intro" data-i18n="letterIntro">
+          في رسالة صغيرة ناطرتك.
+        </p>
+
+        <button class="envelope-button" id="envelopeButton" type="button" aria-expanded="false"
+          aria-controls="letterNote">
+
+          <span class="envelope" aria-hidden="true">
+            <span class="envelope-back"></span>
+            <span class="letter-paper"></span>
+            <span class="envelope-front"></span>
+            <span class="envelope-flap"></span>
+            <span class="seal">✿</span>
+          </span>
+
+          <span class="open-label" data-i18n="openEnvelope">
+            افتحي الرسالة
+          </span>
+
+        </button>
+
+        <div class="letter-note" id="letterNote" hidden>
+          <p data-i18n="letterText">
+            بعض الأيام بتكون مميزة لأنها بتمثل بداية حكاية جديدة، واليوم واحد منها.
+            <br><br>
+            أتمنى تكون أيامك القادمة مليانة أشياء تستاهل الابتسامة، ومفاجآت حلوة ما كانت على البال.
+            <br><br>
+            استمتعي بيومك، وكل سنة وأنتِ بخير!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing-section section">
+      <div class="closing-flower">❀</div>
+
+      <div class="section-inner narrow reveal">
+
+        <span class="eyebrow" data-i18n="closingEyebrow">
+          حتى الفصل القادم
+        </span>
+
+        <h2 data-i18n="closingTitle">
+          بداية فصل جديد...
+        </h2>
+
+        <p data-i18n="closingText">
+          May your next chapter be filled with beautiful surprises.
+        </p>
+
+        <p class="closing-ar" data-i18n="closingAr">
+          عسى أن تحمل لكِ الأيام القادمة ما هو أجمل مما تتمنين.
+        </p>
+
+        <span class="closing-date">07 · 11 · 2010</span>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Memory Modal -->
+  <div class="modal-backdrop" id="memoryModal" hidden>
+    <form class="memory-form" id="memoryForm">
+
+      <button class="modal-close" type="button" id="closeMemoryModal" aria-label="Close">
+        ×
+      </button>
+
+      <span class="eyebrow" data-i18n="memoryFormEyebrow">
+        ذكرى جديدة
+      </span>
+
+      <h2 id="memoryFormTitle" data-i18n="memoryFormTitle">
+        أضيفي ذكرى
+      </h2>
+
+      <label for="memoryTitle" data-i18n="memoryTitleLabel">عنوان الذكرى</label>
+      <input id="memoryTitle" maxlength="80" required>
+
+      <label for="memoryDate" data-i18n="memoryDateLabel">التاريخ</label>
+      <input id="memoryDate" type="date" required>
+
+      <label for="memoryDescription" data-i18n="memoryDescriptionLabel">وصف صغير</label>
+      <textarea id="memoryDescription" rows="3" maxlength="500"></textarea>
+
+      <label for="memoryImage" data-i18n="memoryImageLabel">الصورة</label>
+      <input id="memoryImage" type="file" accept="image/*">
+
+      <div class="modal-actions">
+        <button class="button button-dark" type="submit" id="saveMemoryButton" data-i18n="saveMemory">
+          حفظ الذكرى
+        </button>
+
+        <button class="button button-outline" type="button" id="cancelMemoryButton" data-i18n="cancel">
+          إلغاء
+        </button>
+      </div>
+
+      <p class="form-message" id="memoryFormMessage" role="status"></p>
+
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer id="siteFooter" hidden>
+    <div class="footer-credit">
+      <p>
+        <span data-i18n="footerMadeBy">Made by</span>
+        <a href="https://mohammed-iyad.github.io/personal-website/" target="_blank" rel="noopener noreferrer">MILR</a>
+      </p>
+
+      <p>
+        <span data-i18n="footerFromTo">From</span>
+        <a href="https://mohammed-iyad.github.io/personal-website/" target="_blank" rel="noopener noreferrer">MILR</a>
+        <span data-i18n="footerToRahaf">to Rahaf</span> ✿✿✿
+      </p>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://slowe.github.io/VirtualSky/stuquery.min.js"></script>
+  <script src="https://slowe.github.io/VirtualSky/virtualsky.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Project Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
