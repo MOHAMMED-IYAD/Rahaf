@@ -1,5 +1,12 @@
 const translations = {
   ar: {
+cakeEyebrow: "لحظة عيد ميلاد مميزة",
+cakeTitle: "تمنّي أمنية يا رهف!",
+cakeIntro: "أمنية صغيرة بمناسبة عامك السادس عشر.",
+cakeButton: "تمنّي أمنية",
+cakeWishMessage: "بتمنى  انه تتحقق كل أمنياتكِ !",
+
+
     navMessage: "التهنئة",
     navSky: "السماء",
     navMemories: "الذكريات",
@@ -10,6 +17,8 @@ const translations = {
     heroSubtitle: "صفحة صغيرة ليوم جميل.",
     begin: "خلينا نبدأ",
     scroll: "انزلي لاكتشاف الموقع",
+
+
 
     messageEyebrow: "كلمات صغيرة لهذا اليوم",
     messageTitle: "يوم جميل يليق بكِ.",
@@ -98,6 +107,16 @@ const translations = {
   },
 
   en: {
+cakeEyebrow: "A LITTLE BIRTHDAY MOMENT",
+cakeTitle: "Make a wish, Rahaf!",
+cakeIntro: "A little wish for your sweet sixteen.",
+cakeButton: "Make a Wish",
+cakeWishMessage: "May all your wishes come true!",
+
+
+
+
+
     navMessage: "The wishes",
     navSky: "The sky",
     navMemories: "Memories",
@@ -787,5 +806,75 @@ function observeReveals() {
 
   document.querySelectorAll(".reveal").forEach((element) => {
     revealObserver.observe(element);
+  });
+}
+
+
+
+
+const makeWishButton = document.getElementById("makeWishButton");
+
+
+if (makeWishButton) {
+  makeWishButton.addEventListener("click", () => {
+    const flame = document.getElementById("candleFlame");
+    const message = document.getElementById("cakeWishMessage");
+    const section = document.getElementById("birthdayCake");
+
+    if (makeWishButton.disabled) return;
+
+    makeWishButton.disabled = true;
+
+    flame.classList.add("extinguished");
+    message.hidden = false;
+    section.classList.add("celebrated");
+
+    const colors = [
+      "#DCAFB3",
+      "#F3D5D5",
+      "#E8C5C7",
+      "#98747A",
+      "#F7DDA5",
+      "#FFFFFF"
+    ];
+
+    for (let i = 0; i < 120; i++) {
+      const piece = document.createElement("span");
+
+      piece.className = "confetti-piece";
+
+      piece.style.left = `${Math.random() * 100}vw`;
+
+      piece.style.setProperty(
+        "--confetti-x",
+        `${Math.random() * 240 - 120}px`
+      );
+
+      piece.style.setProperty(
+        "--confetti-y",
+        `${window.innerHeight + 100}px`
+      );
+
+      piece.style.setProperty(
+        "--confetti-rotation",
+        `${Math.random() * 720 - 360}deg`
+      );
+
+      piece.style.setProperty(
+        "--confetti-delay",
+        `${Math.random() * 1.5}s`
+      );
+
+      piece.style.setProperty(
+        "--confetti-color",
+        colors[Math.floor(Math.random() * colors.length)]
+      );
+
+      document.body.appendChild(piece);
+
+      piece.addEventListener("animationend", () => {
+        piece.remove();
+      });
+    }
   });
 }
